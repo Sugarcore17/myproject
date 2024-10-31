@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>软件体系结构教学软件</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container1">
+    <h1>软件体系结构教学软件</h1>
+    <p>此软件用于展示主程序-子程序、面向对象、事件系统和管道-过滤器四种软件体系结构风格的基本原理。</p>
+    <p>您可选择四种方法之一对指定的输入文件进行处理，结果会显示在下方的文本框中。</p>
+    <p>在“体系结构风格”中您可以看到对应风格的原理图或文字说明、源程序代码结构、关键函数的程序代码。</p>
+    <form id="fileForm">
+        <input type="file" name="file" id="fileInput" required>
+        <select name="method" id="methodSelect">
+            <option value="mainSubroutine">主程序-子程序</option>
+            <option value="objectOriented">面向对象</option>
+            <option value="eventSystem">事件系统</option>
+            <option value="pipelineFilter">管道-过滤器</option>
+        </select>
+        <button type="submit">处理文件</button>
+    </form>
+    <div id="result"></div>
+
+    <h2>体系结构风格介绍</h2>
+    <ul class="architecture-list">
+        <li><a href="/architecture/mainSubroutine">主程序-子程序</a></li>
+        <li><a href="/architecture/objectOriented">面向对象</a></li>
+        <li><a href="/architecture/eventSystem">事件系统</a></li>
+        <li><a href="/architecture/pipelineFilter">管道-过滤器</a></li>
+    </ul>
+</div>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>
